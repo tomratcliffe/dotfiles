@@ -37,6 +37,14 @@ function installTools() {
     brew install cf-cli
 
     brew cleanup
+
+    # Install powerline fonts for ZSH themes etc.
+    mkdir -p ~/.tmp
+    git clone https://github.com/powerline/fonts.git --depth=1 ~/.tmp/fonts
+    cd ~/.tmp/fonts
+    ./install.sh
+    cd ..
+    rm -rf ~/.tmp/fonts
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
