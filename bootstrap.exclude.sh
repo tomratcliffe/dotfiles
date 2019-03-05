@@ -2,14 +2,14 @@ mkdir -p ~/Projects
 
 echo "Symlinking files..."
 
-sh ./link-files.sh
+sh ./link-files.exclude.sh
 
 echo "Installing tools..."
 
-sh ./install-tools.sh
+sh ./install-tools.exclude.sh
 
 echo "Making macOS changes..."
 
-sh ./macos.sh
+sh ./macos.exclude.sh
 
 source ~/.zshrc
