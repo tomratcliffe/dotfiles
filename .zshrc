@@ -14,11 +14,11 @@ autoload -Uz compinit && compinit -i
 
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git)
-plugins+=(zsh-better-npm-completion)
-plugins+=(zsh-syntax-highlighting)
-
 source $ZSH/oh-my-zsh.sh
+source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+plugins=(
+    git
+    zsh-better-npm-completion
+    zsh-syntax-highlighting
+)
