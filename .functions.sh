@@ -1,3 +1,5 @@
+echo "${MESSAGE_PREFIX} Setting up functions..."
+
 # `o` with no arguments opens the current directory, otherwise opens the given
 # location
 function o() {

@@ -1,3 +1,5 @@
+echo "${MESSAGE_PREFIX} Setting up aliases..."
+
 # Git
 alias glu="git log @{u}.."
 alias gip="git branch --sort="-committerdate" -vv | grep -m 10 'wip'"

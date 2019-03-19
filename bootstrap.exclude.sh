@@ -1,15 +1,15 @@
-mkdir -p ~/Projects
+source ./dotfiles.helper.sh
 
-echo "Symlinking files..."
+echo "${MESSAGE_PREFIX} Creating ~/Code directory"
+
+mkdir -p ~/Code
 
 sh ./link-files.exclude.sh
 
-echo "Installing tools..."
-
 sh ./install-tools.exclude.sh
-
-echo "Making macOS changes..."
 
 sh ./macos.exclude.sh
 
-source ~/.zshrc
+. ~/.zshrc
+
+echo "${MESSAGE_PREFIX} 🎉 Setup complete! You may need to restart your shell session"

@@ -48,12 +48,14 @@ function setupMacOs() {
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
     setupMacOs;
 else
-    read -p "Setup macOS defaults? (y/n) " -n 1;
+    echo "${MESSAGE_PREFIX} Setup macOS defaults? ";
+    read -p "(y/n): " -n 1;
     echo "";
     if [[ $REPLY =~ ^[Yy]$ ]]; then
+        echo "${MESSAGE_PREFIX} Setting macOS defaults"
         setupMacOs;
     else
-        echo "Skipping macOS defaults"
+        echo "${MESSAGE_PREFIX_WARNING} Skipping macOS defaults"
     fi;
 fi;
 unset setupMacOs;

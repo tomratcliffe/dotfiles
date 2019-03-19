@@ -7,20 +7,19 @@ setupLinks () {
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
     setupLinks;
 else
-    echo "About to symlink the following files to the home directory:"
+    echo "${MESSAGE_PREFIX} About to symlink the following files to the home directory:\n"
 
     for file in $( ls -A | grep -vE '\.exclude*|\.git$|\.gitignore|.*.md|\.DS_Store' ) ; do
-        # ln -sv "$PWD/$file" "$HOME"
-        echo $file
+        echo "\t$file"
     done
 
-    read -p "Continue with links? (y/n) " -n 1;
+    echo "\n${MESSAGE_PREFIX} Setup symlinks to home directory?";
+    read -p "(y/n): " -n 1;
     echo "";
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         setupLinks;
     else
-        echo "Cancelling symlinks"
+        echo "${MESSAGE_PREFIX_WARNING} Skipping symlinks"
     fi;
 fi;
 unset setupLinks;
-

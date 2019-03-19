@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function installTools() {
-    Install homebrew if it is not installed
+    # Install homebrew if it is not installed
     which brew 1>&/dev/null
     if [ ! "$?" -eq 0 ] ; then
         echo "Homebrew not installed. Attempting to install Homebrew"
@@ -50,13 +50,14 @@ function installTools() {
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
     installTools;
 else
-    read -p "This will install Brew and various tools. Continue? (y/n) " -n 1;
+    echo "${MESSAGE_PREFIX} Install brew and other tools? ";
+    read -p "(y/n) " -n 1;
     echo "";
     if [[ $REPLY =~ ^[Yy]$ ]]; then
+        echo "${MESSAGE_PREFIX} Installing... ";
         installTools;
     else
-        echo "Skipping tool installation"
+        echo "${MESSAGE_PREFIX_WARNING} Skipping tool installation"
     fi;
 fi;
 unset installTools;
-

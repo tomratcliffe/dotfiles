@@ -1,8 +1,6 @@
-export ZSH=$HOME/.oh-my-zsh
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:~/.oh-my-zsh"
-export NODE_ENV=dev
-export NVM_DIR="$HOME/.nvm"
+source ~/dotfiles.helper.sh
 
+echo "${MESSAGE_PREFIX} Initialising..."
 
 plugins=(
     git
