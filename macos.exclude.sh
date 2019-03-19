@@ -36,6 +36,9 @@ function setupMacOs() {
     # Disable the over-the-top focus ring animation
     defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
 
+    # Don’t show recent applications in Dock
+    defaults write com.apple.dock show-recents -bool false
+
     killall SystemUIServer
     killall Finder
     killall Dock
