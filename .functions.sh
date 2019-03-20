@@ -18,6 +18,14 @@ function s() {
     fi;
 }
 
+function c() {
+    if [ $# -eq 0 ]; then
+        code .;
+    else
+        code "$@";
+    fi;
+}
+
 # Compare the current branch to the given one
 # TODO: Make this correctly point to the upstream remote if specified
 function hc() {
