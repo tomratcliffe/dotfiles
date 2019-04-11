@@ -4,6 +4,7 @@ echo "${MESSAGE_PREFIX} Setting up aliases..."
 alias glu="git log @{u}.."
 alias gip="git branch --sort="-committerdate" -vv | grep -m 10 'wip'"
 alias gipa="git branch --sort="-committerdate" -vv | grep 'wip'"
+alias glg="git log --stat --format=fuller"
 
 # NPM
 alias nrt="npm run tdd"
