@@ -27,3 +27,6 @@ autoload -Uz compinit && compinit -i
 
 source ~/.functions.sh
 source ~/.aliases.sh
+
+# added by travis gem
+[ -f /Users/tom/.travis/travis.sh ] && source /Users/tom/.travis/travis.sh
