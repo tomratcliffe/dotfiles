@@ -5,6 +5,8 @@ alias glu="git log @{u}.."
 alias gip="git branch --sort="-committerdate" -vv | grep -m 10 'wip'"
 alias gipa="git branch --sort="-committerdate" -vv | grep 'wip'"
 alias glg="git log --stat --format=fuller"
+alias gpnv="git push --no-verify"
+alias gpsupnv="gpsup --no-verify"
 
 # NPM
 alias nrt="npm run tdd"
