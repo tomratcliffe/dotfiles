@@ -2,8 +2,6 @@ source ~/dotfiles.helper.sh
 
 echo "${MESSAGE_PREFIX} Initialising..."
 
-CURRENT_WORK=congenica
-
 ZSH_DISABLE_COMPFIX=true
 
 plugins=(
@@ -48,13 +46,16 @@ autoload -Uz compinit && compinit -i
 
 source ~/.functions.sh
 source ~/.aliases.sh
-source ~/work-specific/${CURRENT_WORK}.secrets.sh
+source ~/work-specific/congenica.secrets.sh
 
 # added by travis gem
 [ -f /Users/tom/.travis/travis.sh ] && source /Users/tom/.travis/travis.sh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+export PATH="$PATH:$HOME/Documents/sonar-scanner-4.6.1.2450-macosx/bin"
+
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
