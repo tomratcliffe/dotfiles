@@ -25,9 +25,6 @@ alias gpsupnv="gpsup --no-verify"
 # NPM
 alias nrt="npm run tdd"
 
-# Project specifics
-alias mysa-dock='(sudo ifconfig lo0 alias 192.168.99.100 ) && (docker start cloudant-developer)'
-
 # NVM
 nvm_load () {
   . $NVM_DIR/nvm.sh

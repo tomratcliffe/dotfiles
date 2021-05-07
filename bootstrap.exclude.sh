@@ -10,6 +10,8 @@ sh ./install-tools.exclude.sh
 
 sh ./macos.exclude.sh
 
+sh ./work-specific/congenica.sh
+
 . ~/.zshrc
 
 echo "${MESSAGE_PREFIX} 🎉 Setup complete! You may need to restart your shell session"
