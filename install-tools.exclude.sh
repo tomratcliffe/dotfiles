@@ -43,6 +43,9 @@ function installTools() {
 
     brew install kubectl
 
+    # https://github.com/rxhanson/Rectangle
+    brew install --cask rectangle
+
     brew cleanup
 
     # Install powerline fonts for ZSH themes etc.
