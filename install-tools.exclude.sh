@@ -38,6 +38,8 @@ function installTools() {
 
     brew install cf-cli
 
+    brew install kubectl
+
     brew cleanup
 
     # Install powerline fonts for ZSH themes etc.
