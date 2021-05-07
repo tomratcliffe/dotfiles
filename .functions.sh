@@ -26,6 +26,14 @@ function c() {
     fi;
 }
 
+function release_pick() {
+    git cherry-pick -x $(git rev-list --right-only --no-merges --reverse --cherry-pick dev...$@)
+}
+
+function check_commits() {
+    git show $1 | git patch-id --stable;
+    git show $2 | git patch-id --stable;
+}
 # Compare the current branch to the given one
 # TODO: Make this correctly point to the upstream remote if specified
 function hc() {
