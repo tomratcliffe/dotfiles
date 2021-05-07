@@ -1,11 +1,6 @@
 echo "${MESSAGE_PREFIX} Setting up aliases..."
 
 # Git
-# Show which commits are ahead of the upstream
-alias glu="git log @{u}.."
-
-# Show the diff of the commits that are ahead of the upstream
-alias gdu="git diff @{u}.."
 
 # Show the last 10 work-in-progress branches
 alias gip="git branch --sort="-committerdate" -vv | grep -m 10 'wip'"
@@ -16,7 +11,13 @@ alias gipa="git branch --sort="-committerdate" -vv | grep 'wip'"
 # Log shorthand with nicer format
 alias glg="git log --stat --format=fuller"
 
-# Push without verifying, circumvents husky checks etc
+# Show which commits are ahead of the upstream
+alias glu="glg @{u}.."
+
+# Show the diff of the commits that are ahead of the upstream
+alias gdu="git diff @{u}.."
+
+# Push without verifying, circumvents pre-push checks etc
 alias gpnv="git push --no-verify"
 
 # Set upstream and push without verifying
