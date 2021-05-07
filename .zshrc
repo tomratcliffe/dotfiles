@@ -60,3 +60,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
+export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+
+export PGDATA="/usr/local/var/postgresql@9.6"
