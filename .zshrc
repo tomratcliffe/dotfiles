@@ -2,6 +2,8 @@ source ~/dotfiles.helper.sh
 
 echo "${MESSAGE_PREFIX} Initialising..."
 
+CURRENT_WORK=congenica
+
 plugins=(
     git
     zsh-better-npm-completion
@@ -40,6 +42,7 @@ autoload -Uz compinit && compinit -i
 
 source ~/.functions.sh
 source ~/.aliases.sh
+source ~/work-specific/${CURRENT_WORK}.secrets.sh
 
 # added by travis gem
 [ -f /Users/tom/.travis/travis.sh ] && source /Users/tom/.travis/travis.sh

@@ -12,7 +12,7 @@ sh ./macos.exclude.sh
 
 sh ./configure.exclude.sh
 
-sh ./work-specific/congenica.sh
+sh ./work-specific/${CURRENT_WORK}.sh
 
 . ~/.zshrc
 
