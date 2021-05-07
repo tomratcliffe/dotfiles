@@ -4,6 +4,8 @@ echo "${MESSAGE_PREFIX} Initialising..."
 
 CURRENT_WORK=congenica
 
+ZSH_DISABLE_COMPFIX=true
+
 plugins=(
     git
     zsh-better-npm-completion
@@ -14,7 +16,11 @@ COMPLETION_WAITING_DOTS="true"
 
 ZSH_THEME="avit"
 
-fpath=(~/.zsh/completion $fpath)
+# https://github.com/Homebrew/homebrew-core/commit/f710a1395f44224e4bcc3518ee9c13a0dc850be1#diff-3e84bae646d908b93e043833873d316dL16
+# https://github.com/ohmyzsh/ohmyzsh/issues/7459#issuecomment-542786200
+
+zstyle ':completion:*:*:git:*' script /usr/local/etc/bash_completion.d/git-completion.bash
+fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 export ZSH=$HOME/.oh-my-zsh
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:~/.oh-my-zsh"
