@@ -18,7 +18,7 @@ fpath=(~/.zsh/completion $fpath)
 
 export ZSH=$HOME/.oh-my-zsh
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:~/.oh-my-zsh"
-export NODE_ENV=dev
+export NODE_ENV=development
 export NVM_DIR="$HOME/.nvm"
 
 # https://stackoverflow.com/a/9810485
