@@ -27,6 +27,9 @@ __git_files () {
 source $ZSH/oh-my-zsh.sh
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Kubernetes autocomplete
+source <(kubectl completion zsh)
+
 autoload -Uz compinit && compinit -i
 
 # todo:
