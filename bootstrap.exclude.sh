@@ -10,6 +10,8 @@ sh ./install-tools.exclude.sh
 
 sh ./macos.exclude.sh
 
+sh ./configure.exclude.sh
+
 sh ./work-specific/congenica.sh
 
 . ~/.zshrc
