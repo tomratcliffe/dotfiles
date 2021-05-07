@@ -23,6 +23,9 @@ function installTools() {
 
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+    # Install TPM plugins so we don't have to manually do it with "prefix + I" after
+    ~/.tmux/plugins/tpm/scripts/install_plugins.sh
+
     brew install zsh
 
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
