@@ -34,11 +34,14 @@ function check_commits() {
     git show $1 | git patch-id --stable;
     git show $2 | git patch-id --stable;
 }
-# Compare the current branch to the given one
-# TODO: Make this correctly point to the upstream remote if specified
-function hc() {
+
+# Open a pull request using github cli
+# https://cli.github.com/manual/gh_pr_create
+function opr() {
     if [ -n "$1" ]
     then
-        hub compare $1..$(git rev-parse --abbrev-ref HEAD)
+        gh pr create -w -B "$1"
+    else
+        gh pr create -w
     fi
 }
