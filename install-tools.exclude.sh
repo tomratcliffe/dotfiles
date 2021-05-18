@@ -45,6 +45,11 @@ function installTools() {
 
     # https://github.com/rxhanson/Rectangle
     brew install --cask rectangle
+    # TODO: configure prefs for rectangle after install
+
+    brew install awscli
+
+    brew install fzf
 
     brew cleanup
 
