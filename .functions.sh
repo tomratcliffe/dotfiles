@@ -45,3 +45,14 @@ function opr() {
         gh pr create -w
     fi
 }
+
+function dssh() {
+    CONTAINER_COMMAND=${1:-bash}
+    docker exec -it `docker ps |sed -n '1!p' | fzf | awk '{print $1}' |sed 's/["\n\r]//g'` $CONTAINER_COMMAND
+}
+
+function kssh() {
+    NAMESPACE=${1}
+    CONTAINER_COMMAND=${2:-bash}
+    kubectl exec -n ${NAMESPACE} -it `kubectl get pods -n "${NAMESPACE}" |sed -n '1!p' | fzf | awk '{print $1}'` -- $CONTAINER_COMMAND
+}
