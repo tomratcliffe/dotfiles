@@ -39,12 +39,26 @@ function setupMacOs() {
     # Don’t show recent applications in Dock
     defaults write com.apple.dock show-recents -bool false
 
+    # Set default size for dock icons
+    defaults write com.apple.dock tilesize -int 35
+
     # Show battery percentage
     defaults write com.apple.menuextra.battery ShowPercent YES
+
+    # Show seconds in clock in menu bar
+    defaults write com.apple.menuextra.clock DateFormat "EEE d MMM  HH:mm:ss"
+    defaults write com.apple.menuextra.clock ShowSeconds 1
+
+    # Touchbar
+    defaults write com.apple.touchbar.agent PresentationModeGlobal fullControlStrip
 
     # Enable full keyboard access for all controls
     # (e.g. enable Tab in modal dialogs)
     defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+    # Set new finder window location
+    defaults write com.apple.finder NewWindowTarget PfHm
+    defaults write com.apple.finder NewWindowTargetPath -string "file://~"
 
     # Trackpad: enable tap to click for this user and for the login screen
     defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
