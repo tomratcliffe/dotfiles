@@ -52,13 +52,43 @@ function setupMacOs() {
     # Touchbar
     defaults write com.apple.touchbar.agent PresentationModeGlobal fullControlStrip
 
+    # Things to work out:
+    # "com.apple.controlcenter" =     {
+    # ...
+    #     "NSStatusItem Visible DoNotDisturb" = 1;
+    #     "NSStatusItem Visible Bluetooth" = 1;
+    # ...
+    #     "NSStatusItem Visible Item-5" = 0;
+    # };
+
+    # "com.apple.controlstrip" =     {
+    #     FullCustomized =         (
+    #         "com.apple.system.group.brightness",
+    #         "com.apple.system.do-not-disturb",
+    #         "com.apple.system.screencapture",
+    #         "com.apple.system.workflows",
+    #         "com.apple.system.group.media",
+    #         "com.apple.system.group.volume",
+    #         "com.apple.system.screen-lock",
+    #         "com.apple.system.sleep"
+    #     );
+    #     ...
+    # }
+
     # Enable full keyboard access for all controls
     # (e.g. enable Tab in modal dialogs)
     defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
+    # Set function keys up correctly
+    # TODO: Work out properly
+    # defaults write NSGlobalDomain com.apple.keyboard.fnState -int 1
+
     # Set new finder window location
     defaults write com.apple.finder NewWindowTarget PfHm
     defaults write com.apple.finder NewWindowTargetPath -string "file://~"
+
+    # TODO: Display timeout on battery -> 15min
+    # TODO: Do not disturb always display in menu bar
 
     # Trackpad: enable tap to click for this user and for the login screen
     defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true

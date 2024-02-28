@@ -51,6 +51,12 @@ function installTools() {
 
     brew install fzf
 
+    brew install jq
+
+    brew install coreutils
+
+    brew install ack
+
     brew cleanup
 
     # Install powerline fonts for ZSH themes etc.

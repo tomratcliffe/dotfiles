@@ -8,6 +8,8 @@ alias gip="git branch --sort="-committerdate" -vv | grep -m 10 'wip'"
 # Show all work-in-progress branches
 alias gipa="git branch --sort="-committerdate" -vv | grep 'wip'"
 
+# TODO: Command to switch to last work in progress branch
+
 # Log shorthand with nicer format
 alias glg="git log --stat --format=fuller"
 
@@ -23,6 +25,9 @@ alias gpnv="git push --no-verify"
 # Set upstream and push without verifying
 alias gpsupnv="gpsup --no-verify"
 
+# Commit without verifying
+alias gcnv="gc --no-verify"
+
 # NPM
 alias nrt="npm run tdd"
 
@@ -32,6 +37,6 @@ nvm_load () {
   . $NVM_DIR/bash_completion
 }
 
-alias node='unalias nvm; unalias node; unalias npm; nvm_load; node $@'
-alias npm='unalias nvm; unalias node; unalias npm; nvm_load; npm $@'
-alias nvm='unalias nvm; unalias node; unalias npm; nvm_load; nvm $@'
+# alias node='unalias nvm; unalias node; unalias npm; nvm_load; node $@'
+# alias npm='unalias nvm; unalias node; unalias npm; nvm_load; npm $@'
+# alias nvm='unalias nvm; unalias node; unalias npm; nvm_load; nvm $@'
