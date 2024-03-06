@@ -37,7 +37,7 @@ source $ZSH/oh-my-zsh.sh
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Kubernetes autocomplete
-source <(kubectl completion zsh)
+# source <(kubectl completion zsh)
 
 # TODO: https://gist.github.com/ctechols/ca1035271ad134841284
 autoload -Uz compinit
@@ -55,21 +55,21 @@ compinit -C
 source ~/.functions.sh
 source ~/.aliases.sh
 
-echo "${MESSAGE_PREFIX} Setting up work specific settings..."
-source ~/work-specific/congenica.secrets.sh
-source ~/work-specific/congenica.sh
+# echo "${MESSAGE_PREFIX} Setting up work specific settings..."
+# source ~/work-specific/congenica.secrets.sh
+# source ~/work-specific/congenica.sh
 
 # < PYENV start >
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
 
-plugin=(
-  pyenv
-)
+# plugin=(
+#   pyenv
+# )
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 # Added so poetry can access it (?)
 # export PATH="$HOME/.pyenv/versions/3.9.9/bin:$PATH"
@@ -79,18 +79,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
-export PGDATA="/usr/local/var/postgresql@9.6"
-export PATH="$PATH:$HOME/.bin/sonar-scanner/bin"
+# export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+# export PGDATA="/usr/local/var/postgresql@9.6"
+# export PATH="$PATH:$HOME/.bin/sonar-scanner/bin"
 export PATH="$PATH:$HOME/.bin"
 export PATH="$PATH:$HOME/.local/bin"
 
-export PATH="$PATH:$HOME/.krew/bin"
-export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.1.0/bin:$PATH"
-export PATH="$HOME/.gem/ruby/3.1.0/bin:$PATH"
-export PATH="$HOME/.samtools/bin:$PATH"
+# export PATH="$PATH:$HOME/.krew/bin"
+# export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.1.0/bin:$PATH"
+# export PATH="$HOME/.gem/ruby/3.1.0/bin:$PATH"
+# export PATH="$HOME/.samtools/bin:$PATH"
 
 bindkey "\e\e[D" backward-word
 bindkey "\e\e[C" forward-word
 
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="/usr/local/opt/go@1.21/bin:$PATH"

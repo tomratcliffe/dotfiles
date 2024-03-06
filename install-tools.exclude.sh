@@ -5,7 +5,7 @@ function installTools() {
     which brew 1>&/dev/null
     if [ ! "$?" -eq 0 ] ; then
         echo "Homebrew not installed. Attempting to install Homebrew"
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         if [ ! "$?" -eq 0 ] ; then
             echo "Something went wrong. Exiting..." && exit 1
         fi
@@ -37,17 +37,17 @@ function installTools() {
 
     brew cask install visual-studio-code
 
-    brew tap cloudfoundry/tap
+    # brew tap cloudfoundry/tap
 
-    brew install cf-cli
+    # brew install cf-cli
 
-    brew install kubectl
+    # brew install kubectl
 
     # https://github.com/rxhanson/Rectangle
     brew install --cask rectangle
     # TODO: configure prefs for rectangle after install
 
-    brew install awscli
+    # brew install awscli
 
     brew install fzf
 
@@ -56,6 +56,8 @@ function installTools() {
     brew install coreutils
 
     brew install ack
+
+    brew install go
 
     brew cleanup
 
