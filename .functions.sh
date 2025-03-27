@@ -1,4 +1,4 @@
-echo "${MESSAGE_PREFIX} Setting up functions..."
+# echo "${MESSAGE_PREFIX} Setting up functions..."
 
 # `o` with no arguments opens the current directory, otherwise opens the given
 # location
@@ -83,7 +83,7 @@ function gcip() {
 }
 
 function gcob() {
-    gco `git branch --sort=-committerdate | fzf | awk '{print $1}'`
+    gco `git branch -v --sort=-committerdate | fzf | awk '{print $1}'`
 }
 
 # todo: make it work
@@ -94,6 +94,10 @@ function ticket_rebase() {
     prefixed_message=\"${PREFIX}: $(git show -s --format=%s)\"
 
     git rebase --no-verify --exec `git commit --no-verify --amend -m "${prefixed_message}"` $BRANCH
+}
+
+function rrc_pr() {
+    rrc whereis pr `gh pr list --repo grafana/grafana --author "@me" --state "merged" | fzf --ansi | sed 's/\t.*//'`
 }
 
 # function k_scale() {

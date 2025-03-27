@@ -15,7 +15,7 @@ function installTools() {
 
     brew upgrade
 
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
     brew install docker
 
@@ -28,20 +28,17 @@ function installTools() {
 
     brew install zsh
 
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
     git clone https://github.com/lukechilds/zsh-better-npm-completion.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-better-npm-completion
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
+    git clone https://github.com/dracula/zsh.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/dracula
+    ln -s ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/dracula/dracula.zsh-theme ~/.oh-my-zsh/themes/dracula.zsh-theme
+
     brew install gh
 
     brew cask install visual-studio-code
-
-    # brew tap cloudfoundry/tap
-
-    # brew install cf-cli
-
-    # brew install kubectl
 
     # https://github.com/rxhanson/Rectangle
     brew install --cask rectangle
@@ -59,13 +56,19 @@ function installTools() {
 
     brew install go
 
+    brew install jsonnet
+
+    brew install shellcheck
+
+    brew install spotify-tui
+
     brew cleanup
 
     # Install powerline fonts for ZSH themes etc.
     mkdir -p ~/.tmp
     git clone https://github.com/powerline/fonts.git --depth=1 ~/.tmp/fonts
     cd ~/.tmp/fonts
-    ./install.sh
+    zsh ./install.sh
     cd ..
     rm -rf ~/.tmp/fonts
 }

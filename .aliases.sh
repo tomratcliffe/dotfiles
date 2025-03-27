@@ -1,4 +1,4 @@
-echo "${MESSAGE_PREFIX} Setting up aliases..."
+# echo "${MESSAGE_PREFIX} Setting up aliases..."
 
 # Git
 

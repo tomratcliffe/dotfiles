@@ -40,7 +40,7 @@ function setupMacOs() {
     defaults write com.apple.dock show-recents -bool false
 
     # Set default size for dock icons
-    defaults write com.apple.dock tilesize -int 35
+    defaults write com.apple.dock tilesize -int 40
 
     # Show battery percentage
     defaults write com.apple.menuextra.battery ShowPercent YES

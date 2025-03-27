@@ -8,11 +8,11 @@ sh ./link-files.exclude.sh
 
 sh ./install-tools.exclude.sh
 
-sh ./macos.exclude.sh
+# sh ./macos.exclude.sh
 
 sh ./configure.exclude.sh
 
-sh ./work-specific/congenica.sh
+sh ./work-specific/grafana.sh
 
 . ~/.zshrc
 
